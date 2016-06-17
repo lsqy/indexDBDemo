@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>indexDB</title>
+</head>
+
+<body>
+    <script>
+    var db;
+    var request = window.indexedDB.open("MyTestDatabase", 1);
+    request.onerror = function(event) {
+        alert("Database error: " + event.target.errorCode);
+    };
+    request.onsuccess = function(event) {
+        db = request.result;
+    };
+    request.onupgradeneeded = function(event) {
+   // 更新对象存储空间和索引 ....
+};
+    </script>
+</body>
+
+</html>
